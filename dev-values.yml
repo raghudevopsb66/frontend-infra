@@ -3,3 +3,15 @@ appPort: 80
 appVersion: 3.0.0
 ingress:
   enabled: true
+resources:
+   limits:
+     cpu: 500m
+     memory: 500Mi
+   requests:
+     cpu: 500m
+     memory: 500Mi
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
